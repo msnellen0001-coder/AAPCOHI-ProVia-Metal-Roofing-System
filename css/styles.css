@@ -1,0 +1,238 @@
+    /* ---------- GLOBAL STYLES ---------- */
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background-color: #ffffff;
+        color: #000000;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* Brand Colors */
+    :root {
+        --green: rgb(120,162,47);
+        --copper: rgb(120,62,47);
+        --light-blue: rgb(167,199,231);
+        --tan: rgb(184,115,51);
+    }
+
+    /* Wrapper for spacing */
+    .wrapper {
+        padding: 0 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        background-color: #ffffff;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    header img {
+        height: 40px;
+    }
+
+    #menu-toggle {
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    /* Mobile nav (hidden by default) */
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 10px 0;
+    }
+
+    nav a {
+        padding: 12px 20px;
+        text-decoration: none;
+        color: white;
+        background-color: var(--green);
+        margin: 6px 0;
+        border-radius: 4px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    nav a:hover {
+        background-color: var(--light-blue);
+        color: black;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+
+    #hero {
+        background-image: url('../images/roofing-background.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 80px 20px;
+        color: white;
+    }
+
+    #hero h1 {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+        max-width: 300px;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .btn {
+        padding: .75rem 1.25rem;
+        width: auto;
+        font-size: 1.1rem;
+        font-weight: 700;
+        text-align: center;
+        border-radius: 8px;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .btn.primary {
+        background-color: var(--light-blue);
+        color: black;
+    }
+
+    .btn.secondary {
+        background-color: var(--green);
+        color: white;
+    }
+
+    .btn:hover {
+        opacity: 0.9;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+
+    #testimonials {
+        padding: 40px 20px;
+
+    }
+
+    #testimonials h2 {
+        font-size: 1.8rem;
+        color: var(--copper);
+        margin-bottom: 20px;
+    }
+
+    #testimonials article {
+        background-color: var(--green);
+        border: 4px solid var(--light-blue);
+        padding: 20px;
+        border-radius: 20%;
+        color: white;
+        overflow: auto;
+    }
+
+    /* Circle image */
+    #testimonials article img {
+        float: left; 
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgb(167,199,231);
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+
+    #testimonials blockquote {
+        margin: 0 0 10px 0;
+        font-style: italic;
+        font-weight: 600;
+    }
+
+    .customer-name {
+        font-weight: 600;
+        font-size: medium;
+        color: var(--copper);
+    }
+
+    /* ---------- WHY CHOOSE PROVIA ---------- */
+
+    #why-choose {
+        padding: 40px 20px;
+    }
+
+    #why-choose h2 {
+        font-size: 1.8rem;
+        color: var(--copper);
+        margin-bottom: 20px;
+    }
+
+    #why-choose article {
+        margin-bottom: 25px;
+    }
+
+    #why-choose h3 {
+        color: var(--tan);
+        margin-bottom: 8px;
+    }
+
+    #why-choose h3 {
+    color: var(--tan);
+    margin-bottom: 8px;
+    padding-left: 34px;              
+    background-image: url('../images/logo.png'); 
+    background-size: 44px 44px;
+    background-repeat: no-repeat;
+    background-position: -12px center;
+    }
+
+    /* ---------- ROOFING STYLES ---------- */
+
+    #styles {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    #styles h2 {
+        font-size: 1.8rem;
+        color: var(--copper);
+        margin-bottom: 20px;
+    }
+
+    .style-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+    .style-grid img {
+    width: 30%;
+    border: 2px solid var(--tan);
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        color: var(--copper);
+        font-weight: 500;
+    }
