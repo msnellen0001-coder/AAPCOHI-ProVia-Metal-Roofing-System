@@ -37,7 +37,6 @@ img {
 
 header {
     flex-wrap: nowrap;
-    overflow-x: auto;
     gap: 10px;
     background-color: #ffffff;
     padding: 12px 20px;
@@ -47,6 +46,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    position: relative;
 }
 
 #menu-toggle {
@@ -112,9 +112,14 @@ header {
 
 #mobile-nav {
     display: none;
-    flex-direction: column;
+    position: absolute;
+    top: 100%;          /* places it directly under the header */
+    left: 0;
+    width: 100%;
     background-color: #ffffff;
+    flex-direction: column;
     padding: 10px 0;
+    z-index: 999;       /* keeps it above content */
 }
 
 #mobile-nav.open {
@@ -122,6 +127,8 @@ header {
 }
 
 #mobile-nav a {
+    display: block;
+    width: 100%;
     padding: 12px 20px;
     text-decoration: none;
     color: white;
@@ -130,6 +137,14 @@ header {
     border-radius: 4px;
     text-align: center;
     font-weight: 500;
+}
+
+#mobile-nav ul {
+    list-style: none;        
+    padding: 0;             
+    margin: 0;              
+    flex-direction: column;
+    text-align: center;      
 }
 
 #mobile-nav a:hover {
@@ -330,6 +345,10 @@ footer {
         display: flex;
         align-items: center;
         gap: 20px;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     #testimonials article img {
