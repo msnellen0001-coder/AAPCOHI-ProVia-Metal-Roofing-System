@@ -36,6 +36,9 @@ img {
 /* ---------- HEADER ---------- */
 
 header {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
     background-color: #ffffff;
     padding: 12px 20px;
     display: flex;
@@ -46,10 +49,6 @@ header {
     z-index: 1000;
 }
 
-header img {
-    height: 40px;
-}
-
 #menu-toggle {
     background: none;
     border: none;
@@ -57,19 +56,72 @@ header img {
     cursor: pointer;
 }
 
-/* Mobile nav (hidden by default) */
-nav {
+/* ------- Logo group --------- */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    flex-shrink: 0;
+}
+
+.logo-group img {
+    height: 40px; 
+    width: auto;
+}
+
+/* ---------- DESKTOP NAV (button bar) ---------- */
+
+.main-nav {
+    display: none; /* hidden on mobile */
+    flex-shrink: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;      
+    justify-content: center;
+    gap: 12px;      
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1500px;     
+    flex-shrink: 0;
+}
+
+
+.main-nav a {
+    min-width: 80px;
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: var(--green);
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.main-nav a:hover {
+    background-color: var(--light-blue);
+    border-color: var(--light-blue);
+    color: black;
+}
+
+/* ---------- MOBILE NAV ONLY ---------- */
+
+#mobile-nav {
     display: none;
     flex-direction: column;
     background-color: #ffffff;
     padding: 10px 0;
 }
 
-nav.open {
+#mobile-nav.open {
     display: flex;
 }
 
-nav a {
+#mobile-nav a {
     padding: 12px 20px;
     text-decoration: none;
     color: white;
@@ -80,7 +132,7 @@ nav a {
     font-weight: 500;
 }
 
-nav a:hover {
+#mobile-nav a:hover {
     background-color: var(--light-blue);
     color: black;
 }
@@ -243,31 +295,21 @@ footer {
 /* ---------- TABLET (min-width: 600px) ---------- */
 
 @media (min-width: 600px) {
-
-    /* Header: show nav horizontally, hide hamburger */
+   
+    /* Hide hamburger + mobile nav */
     #menu-toggle {
         display: none;
     }
 
-    nav {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-        background: none;
-        padding: 0;
+    #mobile-nav {
+        display: none !important;
     }
 
-    nav a {
-        background: none;
-        color: var(--green);
-        padding: 0;
-        margin: 0;
+    /* Show desktop nav */
+    .main-nav {
+        display: block;
     }
 
-    nav a:hover {
-        color: var(--copper);
-        background: none;
-    }
 
     /* Hero */
     #hero {
