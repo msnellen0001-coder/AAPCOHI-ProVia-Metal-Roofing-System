@@ -160,6 +160,14 @@ header {
     background-position: center;
     padding: 80px 20px;
     color: white;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.hero-content {
+    padding: 80px 20px;
 }
 
 #hero h1 {
@@ -186,7 +194,7 @@ header {
 
 .btn.primary {
     background-color: var(--light-blue);
-    color: black;
+    color: white;
 }
 
 .btn.secondary {
@@ -194,9 +202,14 @@ header {
     color: white;
 }
 
-.btn:hover {
-    opacity: 0.9;
+.btn.primary:hover {
+    background-color: var(--green);
 }
+
+.btn.secondary:hover {
+    background-color: var(--light-blue);
+}
+
 
 /* ---------- TESTIMONIALS ---------- */
 
@@ -217,6 +230,24 @@ header {
     border-radius: 12px;
     color: white;
     overflow: auto;
+}
+
+.testimonial-slider {
+    position: relative;
+}
+
+.testimonial {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity .6s ease;
+}
+
+.testimonial.active {
+    opacity: 1;
+    position: relative;
 }
 
 /* Circle image */
@@ -281,6 +312,16 @@ header {
     color: var(--copper);
     margin-bottom: 20px;
 }
+
+#styles h2 a {
+    color: inherit;         
+    text-decoration: none;  
+}
+
+#styles h2 a:hover {
+    color: var(--tan);       
+}
+
 
 .style-grid {
     display: flex;
@@ -392,4 +433,38 @@ footer {
     #hero h1 {
         font-size: 3.6rem;
     }
+
+/* Testimonials: larger on desktop */
+#testimonials h2 {
+    font-size: 2.4rem;  
+    margin-bottom: 30px; 
+}
+
+
+/* Make Why Choose section larger on desktop */
+#why-choose {
+    padding: 60px 40px; 
+}
+
+#why-choose h2 {
+    font-size: 2.4rem;
+}
+
+#why-choose h3 {
+    font-size: 1.6rem; 
+    background-size: 60px 60px;
+    padding-left: 55px;
+}
+
+#why-choose p {
+    font-size: 1.2rem; 
+    line-height: 1.7;
+}
+
+/* Make Roofing Styles section larger on desktop */
+
+#styles h2 {
+    font-size: 2.4rem;   
+    margin-bottom: 30px; 
+}
 }
