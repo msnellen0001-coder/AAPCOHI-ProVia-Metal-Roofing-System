@@ -90,7 +90,6 @@ header {
     flex-shrink: 0;
 }
 
-
 .main-nav a {
     min-width: 80px;
     display: inline-block;
@@ -99,6 +98,7 @@ header {
     color: white;
     text-decoration: none;
     font-weight: 400;
+    border-radius: 999px;
     transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
@@ -113,13 +113,13 @@ header {
 #mobile-nav {
     display: none;
     position: absolute;
-    top: 100%;          /* places it directly under the header */
+    top: 100%;          
     left: 0;
     width: 100%;
     background-color: #ffffff;
     flex-direction: column;
     padding: 10px 0;
-    z-index: 999;       /* keeps it above content */
+    z-index: 999;
 }
 
 #mobile-nav.open {
@@ -187,7 +187,7 @@ header {
     font-size: 1.1rem;
     font-weight: 700;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 999px;
     display: inline-block;
     text-decoration: none;
 }
@@ -210,7 +210,6 @@ header {
     background-color: var(--light-blue);
 }
 
-
 /* ---------- TESTIMONIALS ---------- */
 
 #testimonials {
@@ -223,15 +222,7 @@ header {
     margin-bottom: 20px;
 }
 
-#testimonials article {
-    background-color: var(--green);
-    border: 4px solid var(--light-blue);
-    padding: 20px;
-    border-radius: 12px;
-    color: white;
-    overflow: auto;
-}
-
+/* MOBILE SLIDER BEHAVIOR */
 .testimonial-slider {
     position: relative;
 }
@@ -248,6 +239,15 @@ header {
 .testimonial.active {
     opacity: 1;
     position: relative;
+}
+
+#testimonials article {
+    background-color: var(--green);
+    border: 4px solid var(--light-blue);
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    overflow: auto;
 }
 
 /* Circle image */
@@ -322,7 +322,6 @@ header {
     color: var(--tan);       
 }
 
-
 .style-grid {
     display: flex;
     justify-content: center;
@@ -352,7 +351,6 @@ footer {
 
 @media (min-width: 600px) {
    
-    /* Hide hamburger + mobile nav */
     #menu-toggle {
         display: none;
     }
@@ -361,13 +359,10 @@ footer {
         display: none !important;
     }
 
-    /* Show desktop nav */
     .main-nav {
         display: block;
     }
 
-
-    /* Hero */
     #hero {
         padding: 120px 40px;
     }
@@ -381,7 +376,7 @@ footer {
         gap: 20px;
     }
 
-    /* Testimonials: side-by-side */
+    /* Tablet testimonial layout */
     #testimonials article {
         display: flex;
         align-items: center;
@@ -420,9 +415,58 @@ footer {
 
 @media (min-width: 900px) {
 
+    /* ⭐⭐⭐ DESKTOP TESTIMONIAL GRID ⭐⭐⭐ */
+    .testimonial-slider {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        position: static;
+    }
+
+    .testimonial {
+        opacity: 1 !important;
+        position: static !important;
+        width: 100%;
+        transition: none;
+    }
+
+    #testimonials article {
+        display: block;
+        max-width: 100%;
+        padding: 30px;
+    }
+
+    #testimonials article img {
+        float: none;
+        margin: 0 auto 15px auto;
+        display: block;
+    }
+
+    #testimonials h2 {
+        font-size: 2.4rem;  
+        margin-bottom: 30px; 
+        text-align: center;
+    }
+
     /* Why Choose: 2 columns */
     #why-choose {
         grid-template-columns: repeat(2, 1fr);
+        padding: 60px 40px; 
+    }
+
+    #why-choose h2 {
+        font-size: 2.4rem;
+    }
+
+    #why-choose h3 {
+        font-size: 1.6rem; 
+        background-size: 60px 60px;
+        padding-left: 55px;
+    }
+
+    #why-choose p {
+        font-size: 1.2rem; 
+        line-height: 1.7;
     }
 
     /* Roofing Styles: 3 columns */
@@ -430,41 +474,12 @@ footer {
         width: 30%;
     }
 
+    #styles h2 {
+        font-size: 2.4rem;   
+        margin-bottom: 30px; 
+    }
+
     #hero h1 {
         font-size: 3.6rem;
     }
-
-/* Testimonials: larger on desktop */
-#testimonials h2 {
-    font-size: 2.4rem;  
-    margin-bottom: 30px; 
-}
-
-
-/* Make Why Choose section larger on desktop */
-#why-choose {
-    padding: 60px 40px; 
-}
-
-#why-choose h2 {
-    font-size: 2.4rem;
-}
-
-#why-choose h3 {
-    font-size: 1.6rem; 
-    background-size: 60px 60px;
-    padding-left: 55px;
-}
-
-#why-choose p {
-    font-size: 1.2rem; 
-    line-height: 1.7;
-}
-
-/* Make Roofing Styles section larger on desktop */
-
-#styles h2 {
-    font-size: 2.4rem;   
-    margin-bottom: 30px; 
-}
 }
