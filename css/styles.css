@@ -33,7 +33,7 @@ img {
     max-width: 1200px;
 }
 
-/* ---------- HEADER ---------- */
+/*  HEADER  */
 
 header {
     flex-wrap: nowrap;
@@ -152,7 +152,8 @@ header {
     color: black;
 }
 
-/* ---------- HERO SECTION ---------- */
+/* ---------- MAIN PAGE ---------- */
+/*  HERO SECTION  */
 
 #hero {
     background-image: url('../images/roofing-background.jpg');
@@ -210,7 +211,7 @@ header {
     background-color: var(--light-blue);
 }
 
-/* ---------- TESTIMONIALS ---------- */
+/*  TESTIMONIALS  */
 
 #testimonials {
     padding: 40px 20px;
@@ -274,7 +275,7 @@ header {
     color: var(--copper);
 }
 
-/* ---------- WHY CHOOSE PROVIA ---------- */
+/* WHY CHOOSE PROVIA  */
 
 #why-choose {
     padding: 40px 20px;
@@ -300,7 +301,7 @@ header {
     background-position: -12px center;
 }
 
-/* ---------- ROOFING STYLES ---------- */
+/*  ROOFING STYLES  */
 
 #styles {
     padding: 40px 20px;
@@ -337,7 +338,7 @@ header {
     object-fit: cover;
 }
 
-/* ---------- FOOTER ---------- */
+/*  FOOTER  */
 
 footer {
     text-align: center;
@@ -346,6 +347,44 @@ footer {
     color: var(--copper);
     font-weight: 500;
 }
+/* ---------- FAQ PAGE ---------- */
+/* FAQ image row */
+.faq-image-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.faq-image-row img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 6px;
+}
+
+/* FAQ accordion */
+.faq-item h3 {
+    cursor: pointer;
+    background: #f4f1ec;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    transition: background 0.3s ease;
+}
+
+.faq-item h3:hover {
+    background: #e8e3dc;
+}
+
+.faq-item p {
+    display: none;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border-left: 3px solid #8b6f47;
+    margin-bottom: 1rem;
+    border-radius: 0 0 6px 6px;
+}
+
 
 /* ---------- TABLET (min-width: 600px) ---------- */
 
