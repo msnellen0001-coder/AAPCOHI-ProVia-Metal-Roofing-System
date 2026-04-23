@@ -349,17 +349,22 @@ footer {
 }
 /* ---------- FAQ PAGE ---------- */
 /* FAQ image row */
+
 .faq-image-row {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin: 1.5rem 0;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--green); 
+    border-radius: 8px;
+    margin: 20px 0;
 }
 
 .faq-image-row img {
-    width: 100%;
     max-width: 300px;
-    border-radius: 6px;
+    width: 100%;
+    border: 4px solid var(--light-blue);
+    border-radius: 8px;
 }
 
 /* FAQ accordion */
@@ -414,6 +419,12 @@ footer {
     .cta-buttons {
         gap: 20px;
     }
+
+    .faq-image-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
     /* Tablet testimonial layout */
     #testimonials article {
