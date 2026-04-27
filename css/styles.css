@@ -453,6 +453,161 @@ header {
     margin-bottom: 1rem;
     border-radius: 0 0 6px 6px;
 }
+
+/* ---------- CONTACT PAGE ---------- */
+
+/* CONTACT FORM CARD */
+.contact-section {
+    padding: 40px 20px;
+}
+
+.contact-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border: 2px solid var(--light-blue);
+}
+
+.contact-card-header {
+    background: var(--light-blue);
+    padding: 20px;
+    text-align: center;
+}
+
+.contact-card-header h2 {
+    margin: 0;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* FORM BODY */
+.contact-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: var(--copper);
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: 2px solid var(--light-blue);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
+/* RADIO ROWS */
+.radio-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-row label {
+    font-weight: 500;
+    color: #333;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+}
+
+/* SUCCESS MESSAGE */
+.form-success {
+    display: none;
+    background: var(--green);
+    color: white;
+    padding: 16px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+/* When active */
+.form-success.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* CONTACT INFO BLOCK */
+.contact-info-block {
+    margin-top: 40px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 2px solid var(--light-blue);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-info-block h3 {
+    margin-top: 0;
+    color: var(--copper);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info-row {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.info-row strong {
+    color: var(--green);
+}
+
+.info-row a {
+    color: var(--copper);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.info-row a:hover {
+    color: var(--tan);
+}
+
+/* MAP */
+.map-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid var(--light-blue);
+}
+
 /* ---------- MEDIA QUERIES ---------- */
 @media (max-width: 600px) {
     .faq-image-row {

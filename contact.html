@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us – AAPCO ProVia Metal Roofing</title>
 
-    <!-- Google Font (same as index) -->
+    <!-- Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- CSS (works whether contact.html is in root or a folder) -->
+    <!-- CSS-->
     <link rel="stylesheet" href="../css/styles.css" onerror="this.href='css/styles.css'">
 </head>
 
@@ -55,37 +55,103 @@
 
 <main class="wrapper">
 
-    <section id="contact">
-        <h2>Contact Us</h2>
+<section id="contact" class="contact-section">
 
-        <p class="contact-intro">
-            Have questions about ProVia metal roofing, installation, or scheduling a consultation?
-            Fill out the form below and our team will reach out shortly.
-        </p>
+    <!-- CONTACT FORM CARD -->
+    <div class="contact-card">
+
+        <div class="contact-card-header">
+            <h2><center>Roofing Contact Form</center></h2>
+        </div>
 
         <form class="contact-form">
 
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name">
+            </div>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" placeholder="(555) 555‑5555">
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="(555) 555‑5555">
+            </div>
 
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com">
+            </div>
 
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" placeholder="Street, City, State">
+            <div class="form-group">
+                <label>Best way to contact</label>
+                <div class="radio-row">
+                    <label><input type="radio" name="contact-method" value="email"> Email</label>
+                    <label><input type="radio" name="contact-method" value="text"> Text</label>
+                    <label><input type="radio" name="contact-method" value="phone"> Phone</label>
+                </div>
+            </div>
 
-            <label for="message">How can we help?</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..."></textarea>
+            <div class="form-group">
+                <label for="roof-style">Current Roofing Style / Material</label>
+                <input type="text" id="roof-style" name="roof-style" placeholder="Asphalt, metal, tile, etc.">
+            </div>
 
-            <button type="submit" class="btn primary">
-                Submit Request
-            </button>
+            <div class="form-group">
+                <label for="roof-age">Age of Roof</label>
+                <input type="text" id="roof-age" name="roof-age" placeholder="Approximate age">
+            </div>
 
+            <div class="form-group">
+                <label>Do you have any current leaks?</label>
+                <div class="radio-row">
+                    <label><input type="radio" name="leaks" value="yes"> Yes</label>
+                    <label><input type="radio" name="leaks" value="no"> No</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn secondary submit-btn">Submit</button>
         </form>
-    </section>
+
+        <div class="form-success" id="form-success">
+            Thank you! Your request has been submitted.
+        </div>
+
+    </div> 
+
+
+    <!-- CONTACT INFO + MAP  -->
+    <div class="contact-info-block">
+
+        <h3>Contact Information</h3>
+
+        <div class="info-row">
+            <strong>PHONE:</strong> <a href="tel:8042712500">(804) 271‑2500</a>
+        </div>
+
+        <div class="info-row">
+            <strong>EMAIL:</strong> <a href="mailto:info@aapcohi.com">info@aapcohi.com</a>
+        </div>
+
+        <div class="info-row">
+            <strong>ADDRESS:</strong>
+            <a href="https://www.google.com/maps?q=6710+Route+1,+North+Chesterfield,+VA+23237" target="_blank">
+                6710 Route 1, North Chesterfield, VA 23237
+            </a>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25363.02044278741!2d-77.460!3d37.434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b111d7c6b6f0d1%3A0x8b4f6f0e0e3e0f!2s6710%20US-1%2C%20North%20Chesterfield%2C%20VA%2023237!5e0!3m2!1sen!2sus!4v1710000000000"
+                width="100%" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 

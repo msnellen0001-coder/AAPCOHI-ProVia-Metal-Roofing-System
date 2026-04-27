@@ -34,3 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+/* Contact Form */
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.querySelector(".contact-form");
+    const successBox = document.getElementById("form-success");
+
+    // If we're not on the contact page, stop here
+    if (!form || !successBox) return;
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Show success message
+        successBox.classList.add("show");
+
+        // Clear form fields
+        form.reset();
+
+        // Hide after 4 seconds
+        setTimeout(() => {
+            successBox.classList.remove("show");
+        }, 4000);
+    });
+
+});
