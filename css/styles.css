@@ -33,7 +33,23 @@ img {
     max-width: 1200px;
 }
 
-/*  HEADER  */
+/* ---------- GLOBAL HEADINGS ---------- */
+
+h1, h2, h3 {
+    color: var(--copper);
+    font-weight: 700;
+    text-align: left;
+    margin: 20px 0;
+}
+
+/* HERO + FAQ headings  */
+#hero h1,
+.faq-image-row h1 {
+    color: white;
+    margin: 0;
+}
+
+/* ---------- HEADER ---------- */
 
 header {
     flex-wrap: nowrap;
@@ -56,7 +72,7 @@ header {
     cursor: pointer;
 }
 
-/* ------- Logo group --------- */
+/* Logo group */
 .logo-group {
     display: flex;
     align-items: center;
@@ -69,10 +85,10 @@ header {
     width: auto;
 }
 
-/* ---------- DESKTOP NAV (button bar) ---------- */
+/* ---------- DESKTOP NAV ---------- */
 
 .main-nav {
-    display: none; /* hidden on mobile */
+    display: none;
     flex-shrink: 0;
 }
 
@@ -108,7 +124,7 @@ header {
     color: black;
 }
 
-/* ---------- MOBILE NAV ONLY ---------- */
+/* ---------- MOBILE NAV ---------- */
 
 #mobile-nav {
     display: none;
@@ -152,26 +168,7 @@ header {
     color: black;
 }
 
-/* Global H1 for all non-hero pages */
-body h1:not(#hero h1) {
-    font-size: 1.8rem;
-    color: var(--copper);
-    margin: 20px 0;
-    font-weight: 700;
-    text-align: left;
-}
-
-#testimonials h2,
-#styles h2 {
-    text-align: left;
-}
-
-h1, h2, h3 {
-    text-align: left;
-}
-
-/* ---------- MAIN PAGE ---------- */
-/*  HERO SECTION  */
+/* ---------- HERO SECTION ---------- */
 
 #hero {
     background-image: url('../images/roofing-background.jpg');
@@ -229,14 +226,20 @@ h1, h2, h3 {
     background-color: var(--light-blue);
 }
 
-/*  TESTIMONIALS  */
+/* ---------- TESTIMONIALS ---------- */
 
 #testimonials {
     padding: 40px 20px;
 }
 
+/* FIXED HEADING */
+#testimonials h2 {
+    font-size: 1.8rem;
+    color: var(--copper);
+    margin-bottom: 20px;
+}
 
-/* MOBILE SLIDER BEHAVIOR */
+/* Mobile slider */
 .testimonial-slider {
     position: relative;
 }
@@ -264,7 +267,6 @@ h1, h2, h3 {
     overflow: auto;
 }
 
-/* Circle image */
 #testimonials article img {
     float: left;
     width: 150px;
@@ -288,7 +290,7 @@ h1, h2, h3 {
     color: var(--copper);
 }
 
-/* WHY CHOOSE PROVIA  */
+/* ---------- WHY CHOOSE PROVIA ---------- */
 
 #why-choose {
     padding: 40px 20px;
@@ -298,7 +300,6 @@ h1, h2, h3 {
     font-size: 1.8rem;
     color: var(--copper);
     margin-bottom: 20px;
-    text-align: left;
 }
 
 #why-choose article {
@@ -315,27 +316,25 @@ h1, h2, h3 {
     background-position: -12px center;
 }
 
-/*  ROOFING STYLES  */
+/* ---------- ROOFING STYLES ---------- */
 
 #styles {
     padding: 40px 20px;
-    text-align: center;
 }
 
 #styles h2 {
     font-size: 1.8rem;
     color: var(--copper);
     margin-bottom: 20px;
-    text-align: left;
 }
 
 #styles h2 a {
-    color: inherit;         
-    text-decoration: none;  
+    color: inherit;
+    text-decoration: none;
 }
 
 #styles h2 a:hover {
-    color: var(--tan);       
+    color: var(--tan);
 }
 
 .style-grid {
@@ -353,7 +352,7 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
-/*  FOOTER  */
+/* ---------- FOOTER ---------- */
 
 .footer {
   background: var(--light-blue);
@@ -394,23 +393,33 @@ h1, h2, h3 {
 
 /* ---------- FAQ PAGE ---------- */
 
-/* 
-
-/* FAQ image row */
-
 .faq-image-row {
-    width: 100vw;               
+    width: 100vw;
     position: relative;
     left: 50%;
     right: 50%;
-    margin-left: -50vw;         
+    margin-left: -50vw;
     margin-right: -50vw;
+
     display: flex;
     justify-content: center;
     gap: 20px;
+
     padding: 20px;
     background-color: var(--green);
-    border-radius: 0;           
+    overflow-x: hidden;
+}
+
+.faq-image-row h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    white-space: nowrap;
 }
 
 .faq-image-row img {
@@ -421,9 +430,6 @@ h1, h2, h3 {
     border: 4px solid var(--light-blue);
     border-radius: 8px;
 }
-
-
-
 
 /* FAQ accordion */
 .faq-item h3 {
@@ -447,12 +453,44 @@ h1, h2, h3 {
     margin-bottom: 1rem;
     border-radius: 0 0 6px 6px;
 }
+/* ---------- MEDIA QUERIES ---------- */
+@media (max-width: 600px) {
+    .faq-image-row {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: hidden;
+    }
 
+    .faq-image-row h1 {
+        position: static;
+        transform: none;
+        margin-bottom: 20px;
+        text-align: center;
+        white-space: normal;
+        font-size: 2rem;
+    }
+
+    .faq-image-row img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-links {
+        flex-wrap: nowrap;     
+        justify-content: center;
+        gap: 0.75rem;         
+    }
+
+    .footer-links .icon {
+        width: 32px;       
+    }
+}
 
 /* ---------- TABLET (min-width: 600px) ---------- */
 
 @media (min-width: 600px) {
-   
+
     #menu-toggle {
         display: none;
     }
@@ -477,8 +515,6 @@ h1, h2, h3 {
     .cta-buttons {
         gap: 20px;
     }
-
-
 
     /* Tablet testimonial layout */
     #testimonials article {
@@ -519,7 +555,7 @@ h1, h2, h3 {
 
 @media (min-width: 900px) {
 
-    /* ⭐⭐⭐ DESKTOP TESTIMONIAL GRID ⭐⭐⭐ */
+    /* Desktop testimonial grid */
     .testimonial-slider {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -550,21 +586,16 @@ h1, h2, h3 {
         text-align: justify;
     }
 
-    #testimonials h2 {
-    font-size: 2.4rem;
-    color: var(--copper);
-    margin-bottom: 20px;
-    text-align: left;
-}
+    #testimonials h2,
+    #why-choose h2,
+    #styles h2 {
+        font-size: 2.4rem;
+    }
 
-    /* Why Choose: 2 columns */
+    /* Why Choose */
     #why-choose {
         grid-template-columns: repeat(2, 1fr);
         padding: 60px 40px; 
-    }
-
-    #why-choose h2 {
-        font-size: 2.4rem;
     }
 
     #why-choose h3 {
@@ -583,15 +614,8 @@ h1, h2, h3 {
         width: 30%;
     }
 
-    #styles h2 {
-        font-size: 2.4rem;   
-        margin-bottom: 30px; 
-    }
-
     #hero h1 {
         font-size: 4rem;
         text-shadow: 2px 2px 6px rgba(0,0,0,0.45);
-}
-
     }
-
+}
