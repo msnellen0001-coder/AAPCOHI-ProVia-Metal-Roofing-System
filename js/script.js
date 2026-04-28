@@ -1,62 +1,89 @@
-/* Main Navigation */
-
-
-const menuToggle = document.getElementById("menu-toggle");
-const mobileNav = document.getElementById("mobile-nav");
-
-/* Toggle mobile navigation */
-
-menuToggle.addEventListener("click", () => {
-    mobileNav.classList.toggle("open");
-});
-
-/* Testimonials Section */
-
-let index = 0;
-const testimonials = document.querySelectorAll('.testimonial');
-
-function showNextTestimonial() {
-    testimonials[index].classList.remove('active');
-    index = (index + 1) % testimonials.length;
-    testimonials[index].classList.add('active');
-}
-
-setInterval(showNextTestimonial, 5000); // changes every 5 seconds
-
-/* FAQ Section */
-
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.faq-item h3').forEach(header => {
-        header.addEventListener('click', () => {
-            const paragraph = header.nextElementSibling;
-            paragraph.style.display =
-                paragraph.style.display === "block" ? "none" : "block";
+
+    /* ============================
+       MOBILE NAVIGATION
+    ============================ */
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileNav = document.getElementById("mobile-nav");
+
+    if (menuToggle && mobileNav) {
+        menuToggle.addEventListener("click", () => {
+            mobileNav.classList.toggle("open");
         });
-    });
-});
+    }
 
-/* Contact Form */
-document.addEventListener("DOMContentLoaded", () => {
+    /* ============================
+       TESTIMONIALS ROTATION
+    ============================ */
+    const testimonials = document.querySelectorAll(".testimonial");
+    let index = 0;
 
+    if (testimonials.length > 0) {
+        testimonials[0].classList.add("active");
+
+        setInterval(() => {
+            testimonials[index].classList.remove("active");
+            index = (index + 1) % testimonials.length;
+            testimonials[index].classList.add("active");
+        }, 5000);
+    }
+
+    /* ============================
+       FAQ ACCORDION
+    ============================ */
+    const faqHeaders = document.querySelectorAll(".faq-item h3");
+
+    if (faqHeaders.length > 0) {
+        faqHeaders.forEach(header => {
+            header.addEventListener("click", () => {
+                const paragraph = header.nextElementSibling;
+                if (paragraph) {
+                    paragraph.style.display =
+                        paragraph.style.display === "block" ? "none" : "block";
+                }
+            });
+        });
+    }
+
+    /* ============================
+       CONTACT FORM SUCCESS MESSAGE
+    ============================ */
     const form = document.querySelector(".contact-form");
     const successBox = document.getElementById("form-success");
 
-    // If we're not on the contact page, stop here
-    if (!form || !successBox) return;
+    if (form && successBox) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
 
-    form.addEventListener("submit", function(e) {
-        e.preventDefault();
+            successBox.classList.add("show");
+            form.reset();
 
-        // Show success message
-        successBox.classList.add("show");
+            setTimeout(() => {
+                successBox.classList.remove("show");
+            }, 4000);
+        });
+    }
 
-        // Clear form fields
-        form.reset();
+}); // END DOMContentLoaded
 
-        // Hide after 4 seconds
-        setTimeout(() => {
-            successBox.classList.remove("show");
-        }, 4000);
+
+/* ============================
+   GOOGLE MAP (ABOUT PAGE)
+============================ */
+function initMap() {
+    const mapElement = document.getElementById("map");
+    if (!mapElement) return;
+
+    const aapcoAddress = { lat: 37.44394, lng: -77.44154 };
+
+    const map = new google.maps.Map(mapElement, {
+        zoom: 14,
+        center: aapcoAddress,
     });
 
-});
+    new google.maps.Marker({
+        position: aapcoAddress,
+        map: map,
+        title: "AAPCO Home Improvement",
+    });
+}

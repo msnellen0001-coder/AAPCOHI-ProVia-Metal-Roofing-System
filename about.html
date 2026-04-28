@@ -2,15 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=.8">
     <title>About Us – AAPCO ProVia Metal Roofing</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- CSS (works in root or subfolder) -->
-    <link rel="stylesheet" href="../css/styles.css" onerror="this.href='css/styles.css'">
-</head>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
 
 <body>
 
@@ -52,14 +47,14 @@
     </nav>
 
 </header>
+<section id="about-us"><h1><center>About AAPCO Home Improvements</center></h1></section>
 
 <main class="wrapper">
+
 
     <section class="about-section">
 
         <!-- ABOUT AAPCO -->
-        <h1 style="color: var(--copper); margin-bottom: 20px;">About AAPCO Home Improvements</h1>
-
         <p style="max-width: 750px; margin-bottom: 20px;">
             AAPCO Home Improvements has been serving homeowners with high‑quality exterior renovation
             solutions for decades. Our mission is simple: provide durable, energy‑efficient products
@@ -100,24 +95,15 @@
         </p>
 
         <!-- SERVICE AREAS + MAP -->
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; margin-bottom: 40px;">
-
-            <div style="flex: 1; min-width: 250px;">
-                <h2 style="color: var(--tan); margin-bottom: 10px;">Our Service Areas</h2>
-                <ul class="skills-list">
-                    <li>Central Virginia</li>
-                    <li>Hampton Roads</li>
-                    <li>North Eastern North Carolina</li>
-                </ul>
-            </div>
-
-            <div style="flex: 1; min-width: 250px;">
-                <img src="../images/service-area-map.png"
-                     alt="Service Area Map"
-                     style="max-width: 100%; border-radius: 8px;"
-                     onerror="this.src='images/service-area-map.png'">
-            </div>
-
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25363.02044278741!2d-77.460!3d37.434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b111d7c6b6f0d1%3A0x8b4f6f0e0e3e0f!2s6710%20US-1%2C%20North%20Chesterfield%2C%20VA%2023237!5e0!3m2!1sen!2sus!4v1710000000000"
+                width="100%" 
+                height="350" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
         </div>
 
         <!-- CTA BUTTON -->
@@ -200,7 +186,9 @@
 </footer>
 
 
-<script src="js/script.js" onerror="this.src='js/script.js'"></script>
+<script src="js/script.js"></script>
+
+
 
 </body>
 </html>
