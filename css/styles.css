@@ -612,6 +612,62 @@ header {
     color: var(--copper);
     margin-bottom: 20px;
 }
+/* ---------- PRODUCTS PAGE ---------- */
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.style-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.style-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.style-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.style-card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--tan);
+}
+
+.style-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+#styles-section h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#styles-section p {
+    font-size: 1.05rem;
+    color: #555;
+}
+
+
+
 
 /* ---------- ABOUT PAGE ---------- */
 #about-us h1 {
@@ -871,6 +927,7 @@ header {
     .about-us h1,
     #contact-us h1,
     #why-choose h2,
+    #styles-selection h1,
     .services-section h1,
     .resources-section h1,
     #styles h2 {
