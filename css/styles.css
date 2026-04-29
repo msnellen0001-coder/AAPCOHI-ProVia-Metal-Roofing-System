@@ -619,51 +619,47 @@ header {
     margin-bottom: 20px;
 }
 
-/* ABOUT PAGE LAYOUT */
-.about-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 40px 20px;
+.map-container {
+    width: 100%;
 }
 
-.about-header h1 {
-    text-align: center;
-    margin-bottom: 20px;
+.service-area-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
-.about-header p {
-    max-width: 750px;
-    margin: 0 auto 20px;
+.service-map-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(167,199,231,0.25);
+    padding: 15px 20px;
+    border: 2px solid var(--green);
+    border-radius: 6px;
+    font-size: 1.2rem;
     line-height: 1.6;
 }
 
-.about-block {
-    margin: 50px 0;
+/* Left column */
+.our-service-areas {
+    flex: 1;
+
 }
 
-.about-block h2 {
-    color: var(--tan);
-    margin-bottom: 15px;
+/* Right column */
+.map-container {
+    flex: 2;
+    min-width: 300px;
 }
 
-.about-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.about-list li {
-    margin-bottom: 8px;
-    padding-left: 18px;
-    position: relative;
-}
-
-.about-list li::before {
-    content: "•";
-    color: var(--tan);
-    position: absolute;
-    left: 0;
-    top: 0;
+/* Mobile stacking */
+@media (max-width: 768px) {
+    .service-map-wrapper {
+        flex-direction: column;
+    }
 }
 
 /* GRID FOR SERVICE AREAS + MAP */
@@ -685,7 +681,6 @@ header {
     text-align: center;
     margin-top: 40px;
 }
-
 
 /* ---------- SERVICES PAGE ---------- */
 
@@ -714,7 +709,7 @@ header {
     color: var(--tan);
 }
 
-.resources-intro {
+.intro {
     background: rgba(167,199,231,0.25); /* light-blue tint */
     padding: 15px 20px;
     border: 2px solid var(--green);
@@ -873,7 +868,7 @@ header {
     }
 
     #testimonials h2,
-    #about-us h1,
+    .about-us h1,
     #contact-us h1,
     #why-choose h2,
     .services-section h1,
